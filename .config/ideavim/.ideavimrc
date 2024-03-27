@@ -1,6 +1,10 @@
 " vim settings
 set scrolloff=5
 set history=10000
+set clipboard+=unnamed
+set clipboard+=ideaput
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
 " status bar
 set showmode
@@ -206,9 +210,12 @@ nmap \\jl <Action>(EditorJoinLines)
 nmap \\cg <Action>(Github.Create.Gist)
 
 " highlight yank (bundle plugin)
-set highlightedyank
+Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_duration = "1000"
 let g:highlightedyank_highlight_color = "rgba(57, 197, 187, 155)"
+
+" commentary plugin
+Plug 'tpope/vim-commentary'
 
 " translation (required idea plugin: Translation)
 nmap \\tt <Action>($ShowTranslationDialogAction)
