@@ -8,7 +8,7 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 -- Settings
 config.default_prog = { 'pwsh.exe', '-NoLogo' }
 
-config.color_scheme = "Solarized Dark Higher Contrast (Gogh)"
+config.color_scheme = "Catppuccin Mocha"
 config.font = wezterm.font('Hack NFM')
 config.default_cursor_style = 'BlinkingBar'
 config.window_background_opacity = 0.9
