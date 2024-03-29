@@ -125,8 +125,12 @@ wezterm.on("update-status", function(window, pane)
   end
 
   local basename = function(s)
-    -- Nothing a little regex can't fix
-    return string.gsub(s, "(.*[/\\])(.*)", "%2")
+   -- Normalize path by converting backslashes to slashes
+   s = string.gsub(s, "\\+", "/")
+   -- Remove any trailing slashes (to handle edge cases like "/foo/")
+   s = string.gsub(s, "/+$", "")
+   -- Extract basename
+   return string.match(s, "([^/]+)$") or s
   end
 
   -- Current working directory
