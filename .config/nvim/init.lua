@@ -105,24 +105,24 @@ vim.keymap.set('n', 'sj', '<C-w><C-j>', { desc = 'Move focus to the lower window
 vim.keymap.set('n', 'sk', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Split window
-vim.keymap.set("n", "ss", ":split<Return>", opts)
-vim.keymap.set("n", "sv", ":vsplit<Return>", opts)
+vim.keymap.set('n', 'ss', ':split<Return>', opts)
+vim.keymap.set('n', 'sv', ':vsplit<Return>', opts)
 
 -- alias
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- register
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
-vim.keymap.set({"n", "v"}, "x", [["_x]])
-vim.keymap.set({"n", "v"}, "r", [["_r]])
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
+vim.keymap.set({ 'n', 'v' }, 'x', [["_x]])
+vim.keymap.set({ 'n', 'v' }, 'r', [["_r]])
+vim.keymap.set('x', '<leader>p', [["_dP]])
 
 -- yank
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]])
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -140,11 +140,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Disable the concealing in some file formats
 -- The default conceallevel is 3 in LazyVim
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "json", "jsonc", "markdown" },
-	callback = function()
-		vim.wo.conceallevel = 0
-	end,
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'json', 'jsonc', 'markdown' },
+  callback = function()
+    vim.wo.conceallevel = 0
+  end,
 })
 
 -- [[ Install `lazy.nvim` plugin manager ]]
@@ -523,13 +523,13 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code"stylua"
-        "selene",
-        "luacheck",
-        "shellcheck",
-        "shfmt",
-        "tailwindcss-language-server",
-        "typescript-language-server",
-        "css-lsp",
+        'selene',
+        'luacheck',
+        'shellcheck',
+        'shfmt',
+        'tailwindcss-language-server',
+        'typescript-language-server',
+        'css-lsp',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -569,7 +569,7 @@ require('lazy').setup({
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        javascript = { { "prettierd", "prettier" } },
+        javascript = { { 'prettierd', 'prettier' } },
       },
     },
   },
@@ -678,7 +678,7 @@ require('lazy').setup({
       }
     end,
   },
-  
+
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
@@ -732,17 +732,17 @@ require('lazy').setup({
         'markdown',
         'vim',
         'vimdoc',
-        "cmake",
-        "cpp",
-        "css",
-        "gitignore",
-        "graphql",
-        "http",
-        "java",
-        "php",
-        "scss",
-        "sql",
-     },
+        'cmake',
+        'cpp',
+        'css',
+        'gitignore',
+        'graphql',
+        'http',
+        'java',
+        'php',
+        'scss',
+        'sql',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -784,26 +784,26 @@ require('lazy').setup({
 
   -- add LazyVim and import its plugins
 
-{
-    "LazyVim/LazyVim",
-    import = "lazyvim.plugins",
+  {
+    'LazyVim/LazyVim',
+    import = 'lazyvim.plugins',
     opts = {
-        colorscheme = "material",
-        news = {
-            lazyvim = true,
-            neovim = true,
-        },
+      colorscheme = 'material',
+      news = {
+        lazyvim = true,
+        neovim = true,
+      },
     },
-},
+  },
 
   { import = 'plugins.colorscheme' },
   -- import any extras modules here
---   { import = "lazyvim.plugins.extras.linting.eslint" },
---   { import = "lazyvim.plugins.extras.formatting.prettier" },
---   { import = "lazyvim.plugins.extras.lang.typescript" },
---   { import = "lazyvim.plugins.extras.lang.json" },
---   { import = "lazyvim.plugins.extras.lang.tailwind" },
-  
+  { import = 'lazyvim.plugins.extras.linting.eslint' },
+  { import = 'lazyvim.plugins.extras.formatting.prettier' },
+  { import = 'lazyvim.plugins.extras.lang.typescript' },
+  { import = 'lazyvim.plugins.extras.lang.json' },
+  { import = 'lazyvim.plugins.extras.lang.tailwind' },
+
   { import = 'custom.plugins' },
 }, {
   ui = {
@@ -829,3 +829,4 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
