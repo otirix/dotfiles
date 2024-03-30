@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
+local mux = wezterm.mux
 
 local config = {}
 -- Use config builder object if possible
@@ -176,6 +177,11 @@ wezterm.on("update-status", function(window, pane)
     { Text = wezterm.nerdfonts.md_clock .. "  " .. time },
     { Text = "  " },
   }))
+end)
+
+wezterm.on("gui-startup", function()
+  local tab, pane, window = mux.spawn_window{}
+  window:gui_window():maximize()
 end)
 
 --[[ Appearance setting for when I need to take pretty screenshots
