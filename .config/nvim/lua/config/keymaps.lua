@@ -5,7 +5,7 @@ discipline.cowboy()
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Do things without affecting the registers
 keymap.set("n", "x", '"_x')
@@ -22,10 +22,10 @@ keymap.set("v", "<Leader>d", '"_d')
 keymap.set("v", "<Leader>D", '"_D')
 
 -- alias
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
 
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")
@@ -66,10 +66,24 @@ keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
+keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
+keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
+keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
+-- Codeium keymaps
+vim.keymap.set("i", "<C-g>", function()
+  return vim.fn["codeium#Accept"]()
+end, { expr = true, silent = true })
+vim.keymap.set("i", "<c-;>", function()
+  return vim.fn["codeium#CycleCompletions"](1)
+end, { expr = true, silent = true })
+vim.keymap.set("i", "<c-,>", function()
+  return vim.fn["codeium#CycleCompletions"](-1)
+end, { expr = true, silent = true })
+vim.keymap.set("i", "<c-x>", function()
+  return vim.fn["codeium#Clear"]()
+end, { expr = true, silent = true })
 
 keymap.set("n", "<leader>r", function()
   require("otirix.hsl").replaceHexWithHSL()
