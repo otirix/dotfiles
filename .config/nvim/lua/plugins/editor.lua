@@ -46,16 +46,16 @@ return {
     },
     keys = {
       {
-        "<leader>fP",
+        "<leader>sn",
         function()
           require("telescope.builtin").find_files({
             cwd = require("lazy.core.config").options.root,
           })
         end,
-        desc = "Find Plugin File",
+        desc = "[S]earch [N]eovim files",
       },
       {
-        ";f",
+        "<leader>sf",
         function()
           local builtin = require("telescope.builtin")
           builtin.find_files({
@@ -66,7 +66,7 @@ return {
         desc = "Lists files in your current working directory, respects .gitignore",
       },
       {
-        ";r",
+        "<leader>sg",
         function()
           local builtin = require("telescope.builtin")
           builtin.live_grep({
@@ -84,7 +84,7 @@ return {
         desc = "Lists open buffers",
       },
       {
-        ";t",
+        "<leader>sh",
         function()
           local builtin = require("telescope.builtin")
           builtin.help_tags()
@@ -92,7 +92,7 @@ return {
         desc = "Lists available help tags and opens a new window with the relevant help info on <cr>",
       },
       {
-        ";;",
+        "<leader>sr",
         function()
           local builtin = require("telescope.builtin")
           builtin.resume()
@@ -100,7 +100,7 @@ return {
         desc = "Resume the previous telescope picker",
       },
       {
-        ";e",
+        "<leader>sd",
         function()
           local builtin = require("telescope.builtin")
           builtin.diagnostics()
@@ -108,7 +108,7 @@ return {
         desc = "Lists Diagnostics for all open buffers or a specific buffer",
       },
       {
-        ";s",
+        "<leader>s.",
         function()
           local builtin = require("telescope.builtin")
           builtin.treesitter()
