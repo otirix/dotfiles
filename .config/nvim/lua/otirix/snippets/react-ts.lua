@@ -14,26 +14,43 @@ ls.add_snippets("typescriptreact", {
   s(
     "ccc",
     fmt(
-      '"use client";\n\ninterface {}Props {{\n\n}}\n\nexport default function {}({{}}: {}Props) {{\n\nreturn <>{}</>;\n}}',
+      [[
+        "use client";
+
+        import React from "react";
+
+        interface {}Props {{
+          
+        }}
+
+        export default function {}({{}}: {}Props) {{
+          
+          return (
+            <>{}</>
+          )
+        }}
+      ]],
       {
         i(1),
         rep(1),
         rep(1),
-        i(2),
+        i(0),
       }
     )
   ),
+
   s(
     "cnp",
     fmt(
       [[
-      import react from "react";
+      import React from "react";
 
       interface {}Props {{
         
       }}
 
       export default async function {}({{}}: {}Props) {{
+
         return (
         <div className="container">
           {}

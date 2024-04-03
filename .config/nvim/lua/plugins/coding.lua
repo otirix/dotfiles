@@ -145,7 +145,7 @@ return {
     },
     config = function()
       -- import custom snippets
-      require("otirix.snippets.typescript")
+      require("otirix.snippets")
 
       -- See `:help cmp`
       local cmp = require("cmp")
