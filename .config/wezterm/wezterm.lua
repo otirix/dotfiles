@@ -11,7 +11,8 @@ end
 -- Settings
 config.default_prog = { "pwsh.exe", "-NoLogo" }
 
-config.color_scheme = "MaterialOcean"
+config.color_scheme = "Catppuccin Mocha"
+config.colors = { background = "#000000" }
 config.font = wezterm.font("Hack NFM")
 config.default_cursor_style = "BlinkingBar"
 config.window_background_opacity = 0.95
