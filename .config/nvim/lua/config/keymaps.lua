@@ -8,18 +8,14 @@ local opts = { noremap = true, silent = true }
 keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Do things without affecting the registers
-keymap.set("n", "x", '"_x')
-keymap.set("n", "<Leader>p", '"0p')
-keymap.set("n", "<Leader>P", '"0P')
-keymap.set("v", "<Leader>p", '"0p')
-keymap.set("n", "<Leader>c", '"_c')
-keymap.set("n", "<Leader>C", '"_C')
-keymap.set("v", "<Leader>c", '"_c')
-keymap.set("v", "<Leader>C", '"_C')
-keymap.set("n", "<Leader>d", '"_d')
-keymap.set("n", "<Leader>D", '"_D')
-keymap.set("v", "<Leader>d", '"_d')
-keymap.set("v", "<Leader>D", '"_D')
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "x", [["_x]])
+vim.keymap.set({ "n", "v" }, "r", [["_r]])
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- yank
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- alias
 keymap.set("n", "<C-d>", "<C-d>zz")

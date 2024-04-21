@@ -87,7 +87,7 @@ ls.add_snippets("typescriptreact", {
     "tgls",
     fmt(
       [[
-        const {} = getI18n();
+        const {} = await getI18n();
         const {} = getCurrentLocale();
         {}
       ]],
