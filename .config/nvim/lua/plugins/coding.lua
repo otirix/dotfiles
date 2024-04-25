@@ -215,6 +215,7 @@ return {
       })
     end,
   },
+
   {
     "debugloop/telescope-undo.nvim",
     dependencies = { -- note how they're inverted to above example
@@ -225,7 +226,7 @@ return {
     },
     keys = {
       { -- lazy style key map
-        "<leader>u",
+        "<leader>U",
         "<cmd>Telescope undo<cr>",
         desc = "undo history",
       },
