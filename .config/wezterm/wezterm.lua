@@ -17,7 +17,7 @@ local is_windows = function()
 end
 
 -- Settings
-if is_windows then
+if is_windows() then
 	config.default_prog = { "pwsh.exe", "-NoLogo" }
 end
 
