@@ -8,12 +8,22 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+local is_linux = function()
+	return wezterm.target_triple:find("linux") ~= nil
+end
+
+local is_windows = function()
+	return wezterm.target_triple:find("windows") ~= nil
+end
+
 -- Settings
-config.default_prog = { "pwsh.exe", "-NoLogo" }
+if is_windows then
+	config.default_prog = { "pwsh.exe", "-NoLogo" }
+end
 
 config.color_scheme = "Catppuccin Mocha"
 config.colors = { background = "#000000" }
-config.font = wezterm.font("Hack NFM")
+config.font = is_windows() and wezterm.font("Hack NFM") or wezterm.font("Hack")
 config.default_cursor_style = "BlinkingBlock"
 config.window_background_opacity = 0.95
 config.window_decorations = "RESIZE"
