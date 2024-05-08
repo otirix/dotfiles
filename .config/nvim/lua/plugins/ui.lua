@@ -133,7 +133,6 @@ return {
 
           local function get_git_diff()
             local icons = { removed = "", changed = "", added = "" }
-            icons["changed"] = icons.modified
             local signs = vim.b[props.buf].gitsigns_status_dict
             local labels = {}
             if signs == nil then
@@ -151,7 +150,7 @@ return {
           end
 
           local function get_diagnostic_label()
-            local icons = { error = "", warn = "", info = "", hint = "" }
+            local icons = { error = "", warn = "", info = "", hint = "󰌵" }
             local label = {}
 
             for severity, icon in pairs(icons) do
