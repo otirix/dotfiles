@@ -23,7 +23,7 @@ end
 
 config.color_scheme = "Catppuccin Mocha"
 config.colors = { background = "#000000" }
-config.font = is_windows() and wezterm.font("Hack NFM") or wezterm.font("Hack")
+config.font = is_windows() and wezterm.font("Hack NFM") or wezterm.font("Hack Nerd Font Mono")
 config.default_cursor_style = "BlinkingBlock"
 config.window_background_opacity = 0.95
 config.window_decorations = "RESIZE"
