@@ -254,7 +254,7 @@ return {
     end,
   },
   {
-    enabled = false,
+    enabled = true,
     "andweeb/presence.nvim",
     config = function()
       require("presence"):setup({
