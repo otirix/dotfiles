@@ -3,6 +3,7 @@ set scrolloff=5
 set history=10000
 set clipboard+=unnamed
 set clipboard+=ideaput
+set relativenumber
 nnoremap \e :e ~/.ideavimrc<CR>
 nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
@@ -39,8 +40,8 @@ set idearefactormode=normal
 set ideastatusicon=gray
 
 " location
-nmap <C-i> <Action>(Back)
-nmap <C-o> <Action>(Forward)
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
 
 " buffer (buffer < window < tab)
 nmap <leader>xx <Action>(CloseContent)
@@ -69,11 +70,11 @@ map <leader>sj <Action>(MoveTabDown)
 map <leader>sk <Action>(MoveTabUp)
 map <leader>sl <Action>(MoveTabRight)
 map <leader>sH <Action>(SplitHorizontally)
-map <leader>sV <Action>(SplitVertically)
+map <leader>sv <Action>(SplitVertically)
 
 nmap <C-p> <Action>(JumpToLastWindow)
-nmap <M-i> <Action>(PrevSplitter)
-nmap <M-o> <Action>(NextSplitter)
+nmap <M-o> <Action>(PrevSplitter)
+nmap <M-i> <Action>(NextSplitter)
 nmap <C-k> <C-w>k
 nmap <C-j> <C-w>j
 nmap <C-h> <C-w>h
@@ -93,7 +94,6 @@ nmap <leader>yp <Action>(CopyAbsolutePath)
 nmap <leader>rf <Action>(RecentFiles)
 nmap <leader>rl <Action>(RecentLocations)
 nmap <leader>rp <Action>(ManageRecentProjects)
-nmap <leader>sh <Action>(LocalHistory.ShowHistory)
 nmap <leader>sf <Action>(ShowFilePath)
 nmap <leader>si <Action>(SelectIn)
 nmap <leader>fp <Action>(FindInPath)
@@ -110,16 +110,16 @@ nmap <leader>qd <Action>(QuickDefinition)
 nmap <leader>qD <Action>(QuickTypeDefinition)
 
 " code
-map <leader>c <Action>(CommentByLineComment)
-map <leader>C <Action>(CommentByBlockComment)
-nmap <leader>qf <Action>(ShowIntentionActions)
+map gc <Action>(CommentByLineComment)
+map gC <Action>(CommentByBlockComment)
+nmap <leader>ca <Action>(ShowIntentionActions)
 nmap <leader>se <Action>(ShowErrorDescription)
 nmap <leader>om <Action>(OverrideMethods)
 nmap <leader>im <Action>(ImplementMethods)
-nmap <leader>fc <Action>(ReformatCode)
+nmap <leader>cf <Action>(ReformatCode)
 nmap <leader>ic <Action>(InspectCode)
 nmap <leader>so <Action>(SelectAllOccurrences)
-nmap <leader>gc <Action>(Generate)
+nmap <leader>gcc <Action>(Generate)
 nmap <leader>gt <Action>(GoToTest)
 
 " run
@@ -145,7 +145,7 @@ nmap <leader>re <Action>(Refactorings.QuickListPopupAction)
 nmap <leader>uw <Action>(Unwrap)
 nmap <leader>sw <Action>(SurroundWith)
 nmap <leader>sd <Action>(SafeDelete)
-nmap <leader>oi <Action>(OptimizeImports)
+nmap <leader>cu <Action>(OptimizeImports)
 
 " hierarchy
 nmap <leader>hc <Action>(CallHierarchy)
@@ -163,8 +163,8 @@ nmap <leader>z <Action>(ToggleZenMode)
 " []
 nmap [b <Action>(PreviousTab)
 nmap ]b <Action>(NextTab)
-nmap [g <Action>(GotoPreviousError)
-nmap ]g <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
 nmap [u <Action>(GotoPrevElementUnderCaretUsage)
 nmap ]u <Action>(GotoNextElementUnderCaretUsage)
 nmap [o <Action>(PreviousOccurence)
@@ -177,8 +177,8 @@ nmap ]c <Action>(JumpToNextChange)
 " goto
 nmap <leader>a <Action>(GotoAction)
 nmap ga <Action>(GotoAction)
-nmap gc <Action>(GotoClass)
-nmap gf <Action>(GotoFile)
+nmap <leader>gc <Action>(GotoClass)
+nmap <leader><leader> <Action>(GotoFile)
 nmap gs <Action>(GotoSymbol)
 nmap gt <Action>(GoToTest)
 nmap gT <Action>(TextSearchAction)
