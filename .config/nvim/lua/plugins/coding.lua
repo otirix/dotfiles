@@ -88,6 +88,18 @@ return {
   },
 
   {
+    "github/copilot.vim",
+    config = function()
+      vim.keymap.set("i", "<C-g>", 'copilot#Accept("\\<CR>")', {
+        expr = true,
+        replace_keycodes = false,
+      })
+      vim.g.copilot_no_tab_map = true
+    end,
+  },
+
+  {
+    enabled = false,
     "Exafunction/codeium.vim",
     config = function()
       -- Change '<C-g>' here to any keycode you like.

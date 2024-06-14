@@ -39,20 +39,6 @@ keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnosti
 keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
--- Codeium keymaps
-vim.keymap.set("i", "<C-g>", function()
-  return vim.fn["codeium#Accept"]()
-end, { expr = true, silent = true })
-vim.keymap.set("i", "<c-;>", function()
-  return vim.fn["codeium#CycleCompletions"](1)
-end, { expr = true, silent = true })
-vim.keymap.set("i", "<c-,>", function()
-  return vim.fn["codeium#CycleCompletions"](-1)
-end, { expr = true, silent = true })
-vim.keymap.set("i", "<c-x>", function()
-  return vim.fn["codeium#Clear"]()
-end, { expr = true, silent = true })
-
 keymap.set("n", "<leader>r", function()
   require("otirix.hsl").replaceHexWithHSL()
 end)
