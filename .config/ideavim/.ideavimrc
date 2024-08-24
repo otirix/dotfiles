@@ -1,7 +1,7 @@
 " vim settings
 set scrolloff=5
 set history=10000
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 set clipboard+=ideaput
 set relativenumber
 nnoremap \e :e ~/.ideavimrc<CR>
@@ -19,7 +19,7 @@ set incsearch
 set ignorecase
 set smartcase
 set gdefault
-nmap <leader>nh :noh<CR>
+nnoremap <ESC> :noh<CR>
 
 " register config
 nnoremap <leader>d "_d
@@ -117,6 +117,7 @@ nmap <leader>se <Action>(ShowErrorDescription)
 nmap <leader>om <Action>(OverrideMethods)
 nmap <leader>im <Action>(ImplementMethods)
 nmap <leader>cf <Action>(ReformatCode)
+nmap <C-s> <Action>(ReformatCode)
 nmap <leader>ic <Action>(InspectCode)
 nmap <leader>so <Action>(SelectAllOccurrences)
 nmap <leader>gcc <Action>(Generate)
@@ -211,11 +212,11 @@ nmap \\cg <Action>(Github.Create.Gist)
 
 " highlight yank (bundle plugin)
 Plug 'machakann/vim-highlightedyank'
-let g:highlightedyank_highlight_duration = "1000"
+let g:highlightedyank_highlight_duration = "200"
 let g:highlightedyank_highlight_color = "rgba(57, 197, 187, 155)"
 
 " commentary plugin
-Plug 'tpope/vim-commentary'
+"Plug 'tpope/vim-commentary'
 
 " translation (required idea plugin: Translation)
 nmap \\tt <Action>($ShowTranslationDialogAction)
