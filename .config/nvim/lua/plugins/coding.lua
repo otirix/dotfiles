@@ -88,6 +88,7 @@ return {
   },
 
   {
+    enabled = false,
     "github/copilot.vim",
     config = function()
       vim.keymap.set("i", "<C-g>", 'copilot#Accept("\\<CR>")', {
@@ -258,6 +259,19 @@ return {
       -- defaults, as well as each extension).
       require("telescope").setup(opts)
       require("telescope").load_extension("undo")
+    end,
+  },
+
+  {
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup({
+        keymaps = {
+          accept_suggestion = "<C-g>",
+          clear_suggestion = "<C-]>",
+          accept_word = "<C-j>",
+        },
+      })
     end,
   },
 }
