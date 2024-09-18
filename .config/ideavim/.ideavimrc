@@ -21,6 +21,9 @@ set smartcase
 set gdefault
 nnoremap <ESC> :noh<CR>
 
+" plugin
+set which-key
+
 " register config
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
