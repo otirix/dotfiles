@@ -21,8 +21,6 @@ set smartcase
 set gdefault
 nnoremap <ESC> :noh<CR>
 
-" plugin
-set which-key
 
 " register config
 nnoremap <leader>d "_d
@@ -72,6 +70,7 @@ map <leader>sh <Action>(MoveTabLeft)
 map <leader>sj <Action>(MoveTabDown)
 map <leader>sk <Action>(MoveTabUp)
 map <leader>sl <Action>(MoveTabRight)
+map <leader>sg <Action>(MoveEditorToOppositeTabGroup)
 map <leader>sH <Action>(SplitHorizontally)
 map <leader>sv <Action>(SplitVertically)
 
@@ -233,6 +232,15 @@ nmap <leader>ss <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
 " code screenshot (required idea plugin: Code Screenshots)
 nmap <leader>cs <Action>(one.util.ideaplugin.screenshoter.CopyImageAction)
 
+" which-key plugin
+set which-key
+set notimeout
+
+" nerdtree plugin
+set NERDTree
+map <C-e> :NERDTreeToggle<CR>
+map <leader>e :NERDTree<CR>
+
 " alias
 nmap <C-a> ggVG"+y
 nnoremap n nzzzv
@@ -240,3 +248,146 @@ nnoremap N Nzzzv
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
+" which-key descriptions 
+
+" Register Config
+let g:WhichKeyDesc_register_delete = "<Space>d  Delete without copying"
+let g:WhichKeyDesc_register_visual_delete = "<Space>d  Delete selection without copying"
+let g:WhichKeyDesc_register_x = "x  Delete character without copying"
+let g:WhichKeyDesc_register_replace = "r  Replace character without copying"
+let g:WhichKeyDesc_register_paste = "<Space>p  Paste in visual mode without overwriting register"
+
+" Yank
+let g:WhichKeyDesc_yank = "<Space>y  Yank to clipboard"
+let g:WhichKeyDesc_yank_visual = "<Space>y  Yank selection to clipboard"
+let g:WhichKeyDesc_yank_line = "<Space>Y  Yank line to clipboard"
+
+" IdeaVim Settings
+let g:WhichKeyDesc_ideajoin = "Enable IdeaVim Join"
+let g:WhichKeyDesc_ideamarks = "Enable IdeaVim Marks"
+let g:WhichKeyDesc_idearefactormode = "Set Idea Refactor Mode to Normal"
+let g:WhichKeyDesc_ideastatusicon = "Set Idea Status Icon to Gray"
+
+" Location
+let g:WhichKeyDesc_location_back = "<C-o>  Go back in location history"
+let g:WhichKeyDesc_location_forward = "<C-i>  Go forward in location history"
+
+" Buffer Management
+let g:WhichKeyDesc_close_content = "<Space>xx  Close current editor"
+let g:WhichKeyDesc_close_all_editors = "<Space>xa  Close all editors"
+let g:WhichKeyDesc_close_except_active = "<Space>xo  Close all editors except active"
+let g:WhichKeyDesc_close_unpinned_editors = "<Space>xp  Close all unpinned editors"
+
+" Window Navigation
+let g:WhichKeyDesc_previous_tab = "<C-Tab>  Switch to previous tab"
+let g:WhichKeyDesc_next_tab = "<Tab>  Switch to next tab"
+let g:WhichKeyDesc_pin_editor = "<Space>p  Pin active editor tab"
+let g:WhichKeyDesc_goto_tab1 = "<Space>1  Go to tab 1"
+let g:WhichKeyDesc_goto_tab2 = "<Space>2  Go to tab 2"
+let g:WhichKeyDesc_goto_tab3 = "<Space>3  Go to tab 3"
+let g:WhichKeyDesc_goto_tab4 = "<Space>4  Go to tab 4"
+let g:WhichKeyDesc_goto_tab5 = "<Space>5  Go to tab 5"
+let g:WhichKeyDesc_goto_tab6 = "<Space>6  Go to tab 6"
+let g:WhichKeyDesc_goto_tab7 = "<Space>7  Go to tab 7"
+let g:WhichKeyDesc_goto_tab8 = "<Space>8  Go to tab 8"
+let g:WhichKeyDesc_goto_tab9 = "<Space>9  Go to tab 9"
+
+" Tab Management
+let g:WhichKeyDesc_move_tab_left = "<Space>sh  Move tab left"
+let g:WhichKeyDesc_move_tab_down = "<Space>sj  Move tab down"
+let g:WhichKeyDesc_move_tab_up = "<Space>sk  Move tab up"
+let g:WhichKeyDesc_move_tab_right = "<Space>sl  Move tab right"
+let g:WhichKeyDesc_split_horizontally = "<Space>sH  Split window horizontally"
+let g:WhichKeyDesc_split_vertically = "<Space>sv  Split window vertically"
+
+" Window Movement
+let g:WhichKeyDesc_jump_last_window = "<C-p>  Jump to last window"
+let g:WhichKeyDesc_prev_splitter = "<M-o>  Previous splitter"
+let g:WhichKeyDesc_next_splitter = "<M-i>  Next splitter"
+let g:WhichKeyDesc_move_up = "<C-k>  Move to the window above"
+let g:WhichKeyDesc_move_down = "<C-j>  Move to the window below"
+let g:WhichKeyDesc_move_left = "<C-h>  Move to the window on the left"
+let g:WhichKeyDesc_move_right = "<C-l>  Move to the window on the right"
+
+" Window Control
+let g:WhichKeyDesc_hide_all_windows = "<Space>ww  Hide all windows"
+let g:WhichKeyDesc_stretch_top = "<Space>wk  Stretch split to top"
+let g:WhichKeyDesc_stretch_bottom = "<Space>wj  Stretch split to bottom"
+let g:WhichKeyDesc_stretch_left = "<Space>wh  Stretch split to left"
+let g:WhichKeyDesc_stretch_right = "<Space>wl  Stretch split to right"
+let g:WhichKeyDesc_maximize_editor = "<Space>wm  Maximize editor in split"
+let g:WhichKeyDesc_unsplit_all = "<Space>wu  Unsplit all windows"
+
+" File Operations
+let g:WhichKeyDesc_open_file = "<Space>of  Open file"
+let g:WhichKeyDesc_copy_path = "<Space>yp  Copy file absolute path"
+let g:WhichKeyDesc_recent_files = "<Space>rf  Show recent files"
+let g:WhichKeyDesc_recent_locations = "<Space>rl  Show recent locations"
+let g:WhichKeyDesc_manage_recent_projects = "<Space>rp  Manage recent projects"
+let g:WhichKeyDesc_show_file_path = "<Space>sf  Show file path"
+let g:WhichKeyDesc_select_in = "<Space>si  Select in..."
+let g:WhichKeyDesc_find_in_path = "<Space>fp  Find in path"
+let g:WhichKeyDesc_replace_in_path = "<Space>rp  Replace in path"
+let g:WhichKeyDesc_search_web = "<Space>sw  Search the web"
+
+" Tag Operations
+let g:WhichKeyDesc_find_usages = "<Space>fu  Find usages"
+let g:WhichKeyDesc_file_structure_popup = "<Space>fs  Show file structure popup"
+let g:WhichKeyDesc_show_usages = "<Space>su  Show usages"
+let g:WhichKeyDesc_highlight_usages = "<Space>hl  Highlight usages in file"
+let g:WhichKeyDesc_quick_preview = "<Space>qp  Quick preview"
+let g:WhichKeyDesc_quick_definition = "<Space>qd  Quick definition"
+let g:WhichKeyDesc_quick_type_definition = "<Space>qD  Quick type definition"
+
+" Code Actions
+let g:WhichKeyDesc_comment_line = "gc  Comment by line"
+let g:WhichKeyDesc_comment_block = "gC  Comment by block"
+let g:WhichKeyDesc_show_intention = "<Space>ca  Show intention actions"
+let g:WhichKeyDesc_show_error = "<Space>se  Show error description"
+let g:WhichKeyDesc_override_methods = "<Space>om  Override methods"
+let g:WhichKeyDesc_implement_methods = "<Space>im  Implement methods"
+let g:WhichKeyDesc_reformat_code = "<Space>cf  Reformat code"
+let g:WhichKeyDesc_inspect_code = "<Space>ic  Inspect code"
+let g:WhichKeyDesc_select_all_occurrences = "<Space>so  Select all occurrences"
+let g:WhichKeyDesc_generate_code = "<Space>gcc  Generate code"
+let g:WhichKeyDesc_goto_test = "<Space>gt  Go to test"
+
+" Run Actions
+let g:WhichKeyDesc_context_run = "<Space>rc  Context run"
+let g:WhichKeyDesc_choose_run_config = "<Space>rx  Choose run configuration"
+let g:WhichKeyDesc_rerun = "<Space>rr  Rerun"
+let g:WhichKeyDesc_run_tests = "<Space>rt  Run tests"
+let g:WhichKeyDesc_stop = "<Space>rs  Stop"
+
+" Build Actions
+let g:WhichKeyDesc_build_menu = "<Space>bb  Open build menu"
+
+" Refactor Actions
+let g:WhichKeyDesc_rename_element = "<Space>rn  Rename element"
+let g:WhichKeyDesc_quick_refactor = "<Space>re  Open quick refactorings list"
+let g:WhichKeyDesc_unwrap = "<Space>uw  Unwrap"
+let g:WhichKeyDesc_surround_with = "<Space>sw  Surround with"
+let g:WhichKeyDesc_safe_delete = "<Space>sd  Safe delete"
+let g:WhichKeyDesc_optimize_imports = "<Space>cu  Optimize imports"
+
+" Hierarchy Actions
+let g:WhichKeyDesc_call_hierarchy = "<Space>hc  Show call hierarchy"
+let g:WhichKeyDesc_method_hierarchy = "<Space>hm  Sow method hierarchy"
+let g:WhichKeyDesc_type_hierarchy = "<Space>ht  Show type hierarchy"
+
+" Zen Mode
+let g:WhichKeyDesc_toggle_zen_mode = "<Space>z  Toggle Zen mode"
+
+" Goto Actions
+
+let g:WhichKeyDesc_goto_action = "<Space>a  Goto action"
+let g:WhichKeyDesc_goto_class = "<Space>gc  Goto class"
+let g:WhichKeyDesc_goto_file = "<Space><Space>  Goto file"
+let g:WhichKeyDesc_goto_symbol = "gs  Goto symbol"
+let g:WhichKeyDesc_goto_super_method = "go  Goto super method"
+let g:WhichKeyDesc_goto_declaration = "gd  Goto declaration"
+let g:WhichKeyDesc_goto_type_declaration = "gD  Goto type declaration"
+let g:WhichKeyDesc_goto_test = "gt  Goto test"
+
+" Miscellaneous
+let g:WhichKeyDesc_toggle_distraction_free_mode = "<Space>df  Toggle distraction-free mode"
