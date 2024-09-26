@@ -161,7 +161,7 @@ nmap <leader>ht <Action>(TypeHierarchy)
 "nmap zA <Action>(ExpandAllRegions)
 
 " zen
-nmap <leader>z <Action>(ToggleZenMode)
+nmap <leader>z <Action>(ToggleDistractionFreeMode)
 
 " []
 nmap [b <Action>(PreviousTab)
@@ -262,12 +262,6 @@ let g:WhichKeyDesc_yank = "<Space>y  Yank to clipboard"
 let g:WhichKeyDesc_yank_visual = "<Space>y  Yank selection to clipboard"
 let g:WhichKeyDesc_yank_line = "<Space>Y  Yank line to clipboard"
 
-" IdeaVim Settings
-let g:WhichKeyDesc_ideajoin = "Enable IdeaVim Join"
-let g:WhichKeyDesc_ideamarks = "Enable IdeaVim Marks"
-let g:WhichKeyDesc_idearefactormode = "Set Idea Refactor Mode to Normal"
-let g:WhichKeyDesc_ideastatusicon = "Set Idea Status Icon to Gray"
-
 " Location
 let g:WhichKeyDesc_location_back = "<C-o>  Go back in location history"
 let g:WhichKeyDesc_location_forward = "<C-i>  Go forward in location history"
@@ -297,6 +291,7 @@ let g:WhichKeyDesc_move_tab_left = "<Space>sh  Move tab left"
 let g:WhichKeyDesc_move_tab_down = "<Space>sj  Move tab down"
 let g:WhichKeyDesc_move_tab_up = "<Space>sk  Move tab up"
 let g:WhichKeyDesc_move_tab_right = "<Space>sl  Move tab right"
+let g:WhichKeyDesc_move_editor_to_opposite_tab_group = "<Space>sg  Move editor to opposite tab group"
 let g:WhichKeyDesc_split_horizontally = "<Space>sH  Split window horizontally"
 let g:WhichKeyDesc_split_vertically = "<Space>sv  Split window vertically"
 
@@ -376,7 +371,7 @@ let g:WhichKeyDesc_method_hierarchy = "<Space>hm  Sow method hierarchy"
 let g:WhichKeyDesc_type_hierarchy = "<Space>ht  Show type hierarchy"
 
 " Zen Mode
-let g:WhichKeyDesc_toggle_zen_mode = "<Space>z  Toggle Zen mode"
+let g:WhichKeyDesc_toggle_distraction_free_mode = "<Space>z  Toggle distraction-free mode"
 
 " Goto Actions
 
@@ -391,3 +386,21 @@ let g:WhichKeyDesc_goto_test = "gt  Goto test"
 
 " Miscellaneous
 let g:WhichKeyDesc_toggle_distraction_free_mode = "<Space>df  Toggle distraction-free mode"
+
+" handlers
+sethandler <C-Tab> a:vim
+sethandler <C-D> a:vim
+sethandler <C-E> a:vim
+sethandler <C-G> a:ide
+sethandler <C-H> a:vim
+sethandler <C-I> a:vim
+sethandler <C-J> a:ide
+sethandler <C-L> a:vim
+sethandler <C-N> a:vim
+sethandler <C-O> a:vim
+sethandler <C-P> a:vim
+sethandler <C-R> a:vim
+sethandler <C-S> a:vim
+sethandler <C-U> a:vim
+sethandler <C-V> a:vim
+sethandler <C-Y> a:ide
