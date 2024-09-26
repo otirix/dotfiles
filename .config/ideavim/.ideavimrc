@@ -262,19 +262,14 @@ let g:WhichKeyDesc_yank = "<Space>y  Yank to clipboard"
 let g:WhichKeyDesc_yank_visual = "<Space>y  Yank selection to clipboard"
 let g:WhichKeyDesc_yank_line = "<Space>Y  Yank line to clipboard"
 
-" Location
-let g:WhichKeyDesc_location_back = "<C-o>  Go back in location history"
-let g:WhichKeyDesc_location_forward = "<C-i>  Go forward in location history"
-
 " Buffer Management
+let g:WhichKeyDesc_buffer_management = "<Space>x  Buffer management"
 let g:WhichKeyDesc_close_content = "<Space>xx  Close current editor"
 let g:WhichKeyDesc_close_all_editors = "<Space>xa  Close all editors"
 let g:WhichKeyDesc_close_except_active = "<Space>xo  Close all editors except active"
 let g:WhichKeyDesc_close_unpinned_editors = "<Space>xp  Close all unpinned editors"
 
 " Window Navigation
-let g:WhichKeyDesc_previous_tab = "<C-Tab>  Switch to previous tab"
-let g:WhichKeyDesc_next_tab = "<Tab>  Switch to next tab"
 let g:WhichKeyDesc_pin_editor = "<Space>p  Pin active editor tab"
 let g:WhichKeyDesc_goto_tab1 = "<Space>1  Go to tab 1"
 let g:WhichKeyDesc_goto_tab2 = "<Space>2  Go to tab 2"
@@ -287,6 +282,7 @@ let g:WhichKeyDesc_goto_tab8 = "<Space>8  Go to tab 8"
 let g:WhichKeyDesc_goto_tab9 = "<Space>9  Go to tab 9"
 
 " Tab Management
+let g:WhichKeyDesc_tab_management = "<Space>s  Tab management/refactoring"
 let g:WhichKeyDesc_move_tab_left = "<Space>sh  Move tab left"
 let g:WhichKeyDesc_move_tab_down = "<Space>sj  Move tab down"
 let g:WhichKeyDesc_move_tab_up = "<Space>sk  Move tab up"
@@ -295,16 +291,8 @@ let g:WhichKeyDesc_move_editor_to_opposite_tab_group = "<Space>sg  Move editor t
 let g:WhichKeyDesc_split_horizontally = "<Space>sH  Split window horizontally"
 let g:WhichKeyDesc_split_vertically = "<Space>sv  Split window vertically"
 
-" Window Movement
-let g:WhichKeyDesc_jump_last_window = "<C-p>  Jump to last window"
-let g:WhichKeyDesc_prev_splitter = "<M-o>  Previous splitter"
-let g:WhichKeyDesc_next_splitter = "<M-i>  Next splitter"
-let g:WhichKeyDesc_move_up = "<C-k>  Move to the window above"
-let g:WhichKeyDesc_move_down = "<C-j>  Move to the window below"
-let g:WhichKeyDesc_move_left = "<C-h>  Move to the window on the left"
-let g:WhichKeyDesc_move_right = "<C-l>  Move to the window on the right"
-
 " Window Control
+let g:WhichKeyDesc_window_control = "<Space>w  Window control"
 let g:WhichKeyDesc_hide_all_windows = "<Space>ww  Hide all windows"
 let g:WhichKeyDesc_stretch_top = "<Space>wk  Stretch split to top"
 let g:WhichKeyDesc_stretch_bottom = "<Space>wj  Stretch split to bottom"
@@ -314,6 +302,7 @@ let g:WhichKeyDesc_maximize_editor = "<Space>wm  Maximize editor in split"
 let g:WhichKeyDesc_unsplit_all = "<Space>wu  Unsplit all windows"
 
 " File Operations
+let g:WhichKeyDesc_file_operations = "<Space>f  File operations"
 let g:WhichKeyDesc_open_file = "<Space>of  Open file"
 let g:WhichKeyDesc_copy_path = "<Space>yp  Copy file absolute path"
 let g:WhichKeyDesc_recent_files = "<Space>rf  Show recent files"
@@ -326,6 +315,7 @@ let g:WhichKeyDesc_replace_in_path = "<Space>rp  Replace in path"
 let g:WhichKeyDesc_search_web = "<Space>sw  Search the web"
 
 " Tag Operations
+let g:WhichKeyDesc_tag_operations = "<Space>q  Tag operations"
 let g:WhichKeyDesc_find_usages = "<Space>fu  Find usages"
 let g:WhichKeyDesc_file_structure_popup = "<Space>fs  Show file structure popup"
 let g:WhichKeyDesc_show_usages = "<Space>su  Show usages"
@@ -358,6 +348,7 @@ let g:WhichKeyDesc_stop = "<Space>rs  Stop"
 let g:WhichKeyDesc_build_menu = "<Space>bb  Open build menu"
 
 " Refactor Actions
+let g:WhichKeyDesc_refactor_actions = "<Space>r  Refactor actions"
 let g:WhichKeyDesc_rename_element = "<Space>rn  Rename element"
 let g:WhichKeyDesc_quick_refactor = "<Space>re  Open quick refactorings list"
 let g:WhichKeyDesc_unwrap = "<Space>uw  Unwrap"
@@ -371,7 +362,7 @@ let g:WhichKeyDesc_method_hierarchy = "<Space>hm  Sow method hierarchy"
 let g:WhichKeyDesc_type_hierarchy = "<Space>ht  Show type hierarchy"
 
 " Zen Mode
-let g:WhichKeyDesc_toggle_distraction_free_mode = "<Space>z  Toggle distraction-free mode"
+let g:WhichKeyDesc_toggle_zen_mode = "<Space>z  Toggle distraction-free mode"
 
 " Goto Actions
 
