@@ -135,7 +135,7 @@ nmap <leader>rs <Action>(Stop)
 " debug
 "nmap <leader>dc <Action>(ContextDebug)
 "nmap <leader>dx <Action>(Debug)
-"nmap <leader>db <Action>(ToggleLineBreakpoint)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
 "nmap <leader>de <Action>(EditBreakpoint)
 "nmap <leader>dv <Action>(ViewBreakpoints)
 
@@ -343,6 +343,9 @@ let g:WhichKeyDesc_choose_run_config = "<Space>rx  Choose run configuration"
 let g:WhichKeyDesc_rerun = "<Space>rr  Rerun"
 let g:WhichKeyDesc_run_tests = "<Space>rt  Run tests"
 let g:WhichKeyDesc_stop = "<Space>rs  Stop"
+
+" Debug Actions
+let g:WhichKeyDesc_toggle_line_breakpoint = "<Space>db  Toggle line breakpoint"
 
 " Build Actions
 let g:WhichKeyDesc_build_menu = "<Space>bb  Open build menu"
