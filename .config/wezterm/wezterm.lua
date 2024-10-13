@@ -23,7 +23,8 @@ end
 
 config.color_scheme = "Catppuccin Mocha"
 config.colors = { background = "#000000" }
-config.font = is_windows() and wezterm.font("Hack NFM") or wezterm.font("Hack Nerd Font Mono")
+config.font = is_windows() and wezterm.font("Hack NFM") or wezterm.font("Vazir Code Hack", { weight = "Bold" })
+config.font_size = 11
 config.default_cursor_style = "BlinkingBlock"
 config.window_background_opacity = 0.95
 config.window_decorations = "RESIZE"
@@ -31,6 +32,7 @@ config.window_close_confirmation = "AlwaysPrompt"
 config.scrollback_lines = 3000
 config.default_workspace = "main"
 config.warn_about_missing_glyphs = false
+config.bidi_enabled = true
 
 -- Dim inactive panes
 config.inactive_pane_hsb = {
@@ -126,7 +128,7 @@ config.key_tables = {
 -- I don't like the look of "fancy" tab bar
 config.use_fancy_tab_bar = false
 config.status_update_interval = 1000
-config.tab_bar_at_bottom = false
+config.tab_bar_at_bottom = true
 wezterm.on("update-status", function(window, pane)
 	-- Workspace name
 	local stat = window:active_workspace()
