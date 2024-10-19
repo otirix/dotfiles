@@ -28,13 +28,4 @@ unsetopt FLOW_CONTROL
   }
 } .sudo
 
-# Define a function to run your tmux sessionizer script
-tmux_sessionizer() {
-  ~/.local/bin/tmux-sessionizer
-}
-
-# Create a ZLE widget that calls the function
-zle -N tmux_sessionizer
-
-# Ctrl-f: Open a new tmux session using tmux-sessionizer.
-bindkey '^f' tmux_sessionizer
+bindkey -s '^f' "tmux-sessionizer\n"
