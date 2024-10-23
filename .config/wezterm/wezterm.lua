@@ -129,6 +129,7 @@ config.key_tables = {
 config.use_fancy_tab_bar = false
 config.status_update_interval = 1000
 config.tab_bar_at_bottom = false
+config.hide_tab_bar_if_only_one_tab = true
 wezterm.on("update-status", function(window, pane)
 	-- Workspace name
 	local stat = window:active_workspace()
