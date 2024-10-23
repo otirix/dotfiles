@@ -27,3 +27,5 @@ unsetopt FLOW_CONTROL
     LBUFFER="sudo $LBUFFER"
   }
 } .sudo
+
+bindkey -s '^f' "tmux-sessionizer\n"
