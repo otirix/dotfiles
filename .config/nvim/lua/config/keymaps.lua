@@ -46,3 +46,6 @@ end)
 keymap.set("n", "<leader>i", function()
   require("otirix.lsp").toggleInlayHints()
 end)
+
+-- Save and reload buffer
+keymap.set("n", "<C-s>", ":write | edit | TSBufEnable highlight<CR>", { desc = "Save and reload buffer" })

@@ -5,7 +5,6 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH="$PATH:/home/otirix/.dotnet/tools"
 export DOTFILES="$HOME/dotfiles"
 export WORKSPACE="$HOME/workspace"
-export TERM="xterm-256color"
 export BROWSER="google-chrome-stable"
 
 # XDG
