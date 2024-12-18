@@ -25,8 +25,8 @@ config.color_scheme = "Catppuccin Mocha"
 config.colors = { background = "#000000" }
 config.font = is_windows() and wezterm.font("Hack NFM") or wezterm.font("Vazir Code Hack", { weight = "Bold" })
 config.font_size = 11
-config.default_cursor_style = "BlinkingBlock"
-config.window_background_opacity = 0.95
+config.default_cursor_style = "SteadyBlock"
+config.window_background_opacity = 1
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.scrollback_lines = 3000
