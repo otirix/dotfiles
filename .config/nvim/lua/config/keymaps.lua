@@ -48,4 +48,6 @@ keymap.set("n", "<leader>i", function()
 end)
 
 -- Save and reload buffer
-keymap.set("n", "<C-s>", ":write | edit | TSBufEnable highlight<CR>", { desc = "Save and reload buffer" })
+keymap.set("n", "<C-S>", ":write | edit | TSBufEnable highlight<CR>", { desc = "Save and reload buffer" })
+-- Only save buffer without reloading
+keymap.set("n", "<C-s>", ":write<CR>", { desc = "Save buffer without reloading" })
