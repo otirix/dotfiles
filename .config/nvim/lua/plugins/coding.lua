@@ -39,6 +39,16 @@ return {
     opts = {},
   },
 
+  {
+    "saghen/blink.cmp",
+    event = "InsertEnter",
+    opts = {
+      keymap = {
+        preset = "default",
+      },
+    },
+  },
+
   -- Go forward/backward with square brackets
   {
     "echasnovski/mini.bracketed",
