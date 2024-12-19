@@ -42,6 +42,27 @@ return {
   },
 
   {
+    "stevearc/oil.nvim",
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+    config = function()
+      require("oil").setup({
+
+        keymaps = {
+          ["<C-v>"] = { "actions.select", opts = { vertical = true } },
+        },
+        view_options = {
+          show_hidden = true,
+        },
+      })
+
+      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+    end,
+  },
+
+  {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
