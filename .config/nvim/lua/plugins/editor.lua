@@ -28,6 +28,7 @@ return {
 
   {
     "ibhagwan/fzf-lua",
+    enabled = false,
     opts = function(_, opts)
       local fzf = require("fzf-lua")
       local actions = fzf.actions
@@ -46,10 +47,23 @@ return {
 
   {
     "nvim-neo-tree/neo-tree.nvim",
+    enabled = false,
     opts = {
       filesystem = {
         filtered_items = {
           hide_dotfiles = false,
+        },
+      },
+    },
+  },
+
+  {
+    "folke/snacks.nvim",
+    opts = {
+      image = {},
+      picker = {
+        sources = {
+          files = { hidden = true },
         },
       },
     },
