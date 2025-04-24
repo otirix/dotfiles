@@ -44,4 +44,25 @@ return {
       },
     },
   },
+
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    priority = 1000,
+    config = function()
+      require("rose-pine").setup({
+        variant = "moon",
+        disable_background = false,
+        disable_float_background = false,
+        styles = {
+          transparency = true,
+        },
+        highlight_groups = {
+          TreesitterContext = { bg = "NONE" },
+          TreesitterContextLineNumber = { bg = "NONE" },
+        },
+      })
+      vim.cmd("colorscheme rose-pine")
+    end,
+  },
 }
