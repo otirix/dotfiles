@@ -1,0 +1,7 @@
+tabs = true
+frame = "none"
+
+[font]
+normal = ["Hack NFM"]
+size = 11.0
+
