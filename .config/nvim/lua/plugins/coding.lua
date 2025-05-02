@@ -46,6 +46,17 @@ return {
       keymap = {
         preset = "default",
       },
+      completion = {
+        ghost_text = {
+          enabled = false,
+        },
+        list = {
+          selection = {
+            preselect = false,
+            auto_insert = false,
+          },
+        },
+      },
     },
   },
 
