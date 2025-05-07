@@ -64,13 +64,13 @@ tooltip {
   padding-left: 3px;
   padding-right: 3px;
   margin-right: 0px;
-  color: @wb-color;
+  color: @main-fg;
   animation: tb_normal 20s ease-in-out 1;
 }
 
 #taskbar button.active {
   background: @wb-act-bg;
-  color: @wb-act-color;
+  color: @wb-act-fg;
   margin-left: 3px;
   padding-left: 12px;
   padding-right: 12px;
@@ -81,7 +81,7 @@ tooltip {
 
 #taskbar button:hover {
   background: @wb-hvr-bg;
-  color: @wb-hvr-color;
+  color: @wb-hvr-fg;
   animation: tb_hover 20s ease-in-out 1;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
