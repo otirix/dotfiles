@@ -41,6 +41,7 @@ config.font_rules = {
 		font = is_windows() and wezterm.font("Hack NFM", { weight = "Bold" })
 			or wezterm.font("Hack Nerd Font Mono", { weight = "Bold" }),
 	},
+
 	-- For bold but not italic
 	{
 		intensity = "Bold",
@@ -48,6 +49,7 @@ config.font_rules = {
 		font = is_windows() and wezterm.font("Hack NFM", { weight = "ExtraBold" })
 			or wezterm.font("Hack Nerd Font Mono", { weight = "ExtraBold" }),
 	},
+
 	-- For bold and italic
 	{
 		intensity = "Bold",
@@ -55,13 +57,15 @@ config.font_rules = {
 		font = is_windows() and wezterm.font("Hack NFM", { weight = "Bold", style = "Italic" })
 			or wezterm.font("Hack Nerd Font Mono", { weight = "Bold", style = "Italic" }),
 	},
+
 	-- For normal intensity and italic
 	{
 		intensity = "Normal",
 		italic = true,
-		font = is_windows() and wezterm.font("Hack NFM", { style = "Italic" })
-			or wezterm.font("Hack Nerd Font Mono", { style = "Italic" }),
+		font = is_windows() and wezterm.font("Hack NFM", { weight = "Bold", style = "Italic" })
+			or wezterm.font("Hack Nerd Font Mono", { weight = "Bold", style = "Italic" }),
 	},
+
 	-- half intensity and italic
 	{
 		intensity = "Half",
@@ -69,6 +73,7 @@ config.font_rules = {
 		font = is_windows() and wezterm.font("Hack NFM", { style = "Italic" })
 			or wezterm.font("Hack Nerd Font Mono", { style = "Italic" }),
 	},
+
 	-- half intensity and not italic
 	{
 		intensity = "Half",
