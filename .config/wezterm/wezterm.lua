@@ -281,7 +281,7 @@ end)
 config.window_padding = {
 	left = 0,
 	right = 0,
-	top = 0.5,
+	top = 5,
 	bottom = 0,
 }
 
