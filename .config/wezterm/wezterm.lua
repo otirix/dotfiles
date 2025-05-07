@@ -22,8 +22,62 @@ if is_windows() then
 end
 
 config.color_scheme = "Catppuccin Mocha"
-config.colors = { background = "#000000" }
-config.font = is_windows() and wezterm.font("Hack NFM") or wezterm.font("Vazir Code Hack", { weight = "Bold" })
+config.colors = {
+	background = "#000000",
+}
+config.window_frame = {
+	active_titlebar_bg = "#000000",
+
+	-- The overall background color of the tab bar when
+	-- the window is not focused
+	inactive_titlebar_bg = "#000000",
+}
+
+config.font = is_windows() and wezterm.font("Hack NFM") or wezterm.font("Hack Nerd Font Mono")
+config.font_rules = {
+	{
+		intensity = "Normal",
+		italic = false,
+		font = is_windows() and wezterm.font("Hack NFM", { weight = "Bold" })
+			or wezterm.font("Hack Nerd Font Mono", { weight = "Bold" }),
+	},
+	-- For bold but not italic
+	{
+		intensity = "Bold",
+		italic = false,
+		font = is_windows() and wezterm.font("Hack NFM", { weight = "ExtraBold" })
+			or wezterm.font("Hack Nerd Font Mono", { weight = "ExtraBold" }),
+	},
+	-- For bold and italic
+	{
+		intensity = "Bold",
+		italic = true,
+		font = is_windows() and wezterm.font("Hack NFM", { weight = "Bold", style = "Italic" })
+			or wezterm.font("Hack Nerd Font Mono", { weight = "Bold", style = "Italic" }),
+	},
+	-- For normal intensity and italic
+	{
+		intensity = "Normal",
+		italic = true,
+		font = is_windows() and wezterm.font("Hack NFM", { style = "Italic" })
+			or wezterm.font("Hack Nerd Font Mono", { style = "Italic" }),
+	},
+	-- half intensity and italic
+	{
+		intensity = "Half",
+		italic = true,
+		font = is_windows() and wezterm.font("Hack NFM", { style = "Italic" })
+			or wezterm.font("Hack Nerd Font Mono", { style = "Italic" }),
+	},
+	-- half intensity and not italic
+	{
+		intensity = "Half",
+		italic = false,
+		font = is_windows() and wezterm.font("Hack NFM", { weight = "Regular" })
+			or wezterm.font("Hack Nerd Font Mono", { weight = "Regular" }),
+	},
+}
+
 config.font_size = 11
 config.default_cursor_style = "SteadyBlock"
 config.window_background_opacity = 1
@@ -33,6 +87,7 @@ config.scrollback_lines = 3000
 config.default_workspace = "main"
 config.warn_about_missing_glyphs = false
 config.bidi_enabled = true
+config.enable_wayland = false
 
 -- Dim inactive panes
 config.inactive_pane_hsb = {
@@ -222,15 +277,12 @@ wezterm.on("gui-startup", function()
 	window:gui_window():maximize()
 end)
 
---[[ Appearance setting for when I need to take pretty screenshots
-config.enable_tab_bar = false
+-- Appearance setting for when I need to take pretty screenshots
 config.window_padding = {
-  left = '0.5cell',
-  right = '0.5cell',
-  top = '0.5cell',
-  bottom = '0cell',
-
+	left = 0,
+	right = 0,
+	top = 0.5,
+	bottom = 0,
 }
---]]
 
 return config
