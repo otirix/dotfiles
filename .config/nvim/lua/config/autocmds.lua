@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Check if the operating system is WSL Ubuntu
-local sys_info = vim.loop.os_uname()
+--[[ local sys_info = vim.loop.os_uname()
 local is_wsl_ubuntu = sys_info.release:find("microsoft") or sys_info.release:find("WSL")
 
 if not is_wsl_ubuntu then
@@ -38,4 +38,4 @@ if not is_wsl_ubuntu then
       vim.fn.system({ "wezterm", "cli", "set-tab-title", "" })
     end,
   })
-end
+end ]]
