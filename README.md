@@ -1,5 +1,7 @@
 # Otirix's dotfiles
 
-![pwsh screenshot](https://github.com/otirix/dotfiles/assets/22962976/2a38bc82-bfca-44a5-b54c-a11e8683134e)
+![ghostty screenshot](https://github.com/user-attachments/assets/1307fee1-96d8-4e4d-aa10-a92b4594140b)
 
-![nvim screenshot](https://github.com/otirix/dotfiles/assets/22962976/a2c67db3-9229-4caa-97c3-f38177291261)
+
+![neovim screenshot](https://github.com/user-attachments/assets/0544736b-d202-4ebe-85c8-339bf607473c)
+
