@@ -7,3 +7,5 @@ font-size = 11
 confirm-close-surface = false
 
 app-notifications = false
+
+mouse-hide-while-typing = true
